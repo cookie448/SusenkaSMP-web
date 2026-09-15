@@ -1,1 +1,490 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>SušenkaSMP | Minecraft Server</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #090909;
+      color: white;
+    }
+
+    /* MENU */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 75px;
+      background: rgba(8, 8, 8, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8%;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      color: #ff7a00;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #ff7a00;
+    }
+
+    /* HLAVNA STRANKA */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+
+      background:
+        radial-gradient(circle at center, rgba(255,122,0,.18), transparent 45%),
+        linear-gradient(#080808, #111);
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 9vw, 110px);
+      font-weight: 900;
+      letter-spacing: -4px;
+    }
+
+    .hero h1 span {
+      color: #ff7a00;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 20px;
+      margin: 15px 0 35px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s;
+      border: none;
+      font-size: 15px;
+    }
+
+    .orange {
+      background: #ff7a00;
+      color: #111;
+    }
+
+    .orange:hover {
+      background: #ff922b;
+      transform: translateY(-3px);
+    }
+
+    .dark {
+      background: #1b1b1b;
+      color: white;
+      border: 1px solid #333;
+    }
+
+    .dark:hover {
+      border-color: #ff7a00;
+      transform: translateY(-3px);
+    }
+
+    /* SEKCIE */
+    section {
+      padding: 100px 10%;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .section-title span {
+      color: #ff7a00;
+    }
+
+    .subtitle {
+      color: #888;
+      margin-bottom: 45px;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* INFO */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #121212;
+      border: 1px solid #242424;
+      padding: 30px;
+      border-radius: 12px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #ff7a00;
+    }
+
+    .card h3 {
+      color: #ff7a00;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    /* PRAVIDLA */
+    .rule {
+      background: #121212;
+      border-left: 4px solid #ff7a00;
+      padding: 20px;
+      margin: 12px 0;
+      border-radius: 5px;
+    }
+
+    /* TEAM */
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .member {
+      text-align: center;
+      background: #121212;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #242424;
+    }
+
+    .avatar {
+      width: 75px;
+      height: 75px;
+      background: #ff7a00;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .member h3 {
+      margin-bottom: 7px;
+    }
+
+    .member p {
+      color: #ff7a00;
+    }
+
+    /* DISCORD */
+    .discord {
+      text-align: center;
+      background: linear-gradient(135deg, #17100a, #0b0b0b);
+    }
+
+    .discord h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .discord p {
+      color: #999;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      padding: 35px;
+      text-align: center;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+
+    /* MOBIL */
+    @media(max-width: 800px) {
+      nav {
+        padding: 0 20px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 80px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">🍪 SušenkaSMP</div>
+
+  <ul>
+    <li><a href="#domov">Domov</a></li>
+    <li><a href="#info">Info</a></li>
+    <li><a href="#pravidla">Pravidlá</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#novinky">Novinky</a></li>
+    <li><a href="https://discord.gg/JAfQn2aJE" target="_blank">Discord</a></li>
+  </ul>
+</nav>
+
+
+<section class="hero" id="domov">
+
+  <div>
+    <h1>SUŠENKA<span>SMP</span></h1>
+
+    <p>
+      Minecraft survival server, kde píšeš svoj vlastný príbeh.
+    </p>
+
+    <div class="buttons">
+
+      <button class="button orange" onclick="copyIP()">
+        🍪 SKOPÍROVAŤ IP
+      </button>
+
+      <a class="button dark"
+         href="https://discord.gg/JAfQn2aJE"
+         target="_blank">
+        DISCORD
+      </a>
+
+    </div>
+
+    <p id="ip"
+       style="margin-top:20px;font-size:15px;">
+       susenkasmp.ultramc.co
+    </p>
+
+  </div>
+
+</section>
+
+
+<section id="info">
+
+  <h2 class="section-title">
+    O <span>serveri</span>
+  </h2>
+
+  <p class="subtitle">
+    SušenkaSMP je CZ/SK Minecraft survival server vytvorený
+    pre komunitu hráčov, ktorí chcú klasické SMP, zábavu,
+    obchodovanie a súboje s ostatnými hráčmi.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>⚔️ Survival</h3>
+      <p>
+        Klasický survival svet, v ktorom môžeš stavať,
+        bojovať a vytvoriť si vlastnú základňu.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>💰 Ekonomika</h3>
+      <p>
+        Získavaj peniaze, obchoduj s hráčmi a vybuduj
+        si svoje bohatstvo.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>👥 Komunita</h3>
+      <p>
+        Pridaj sa k našej CZ/SK komunite a hraj
+        spolu s ostatnými.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="pravidla">
+
+  <h2 class="section-title">
+    <span>Pravidlá</span>
+  </h2>
+
+  <p class="subtitle">
+    Pred hraním na serveri si prečítaj základné pravidlá.
+  </p>
+
+  <div class="rule">
+    <b>01.</b> Nepoužívaj cheaty, hack klienty ani zakázané módy.
+  </div>
+
+  <div class="rule">
+    <b>02.</b> Nezneužívaj bugy a chyby servera.
+  </div>
+
+  <div class="rule">
+    <b>03.</b> Rešpektuj rozhodnutia Admin Teamu.
+  </div>
+
+  <div class="rule">
+    <b>04.</b> Nespamuj a správaj sa normálne k ostatným hráčom.
+  </div>
+
+</section>
+
+
+<section id="team">
+
+  <h2 class="section-title">
+    Náš <span>Team</span>
+  </h2>
+
+  <p class="subtitle">
+    Ľudia, ktorí sa starajú o SušenkaSMP.
+  </p>
+
+  <div class="team">
+
+    <div class="member">
+      <div class="avatar">C</div>
+      <h3>cookie448</h3>
+      <p>OWNER</p>
+    </div>
+
+    <div class="member">
+      <div class="avatar">?</div>
+      <h3>Manager</h3>
+      <p>MANAGER</p>
+    </div>
+
+    <div class="member">
+      <div class="avatar">?</div>
+      <h3>Admin</h3>
+      <p>ADMIN</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="novinky">
+
+  <h2 class="section-title">
+    Najnovšie <span>novinky</span>
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🚀 SušenkaSMP</h3>
+      <p>
+        Oficiálna webová stránka SušenkaSMP je vo vývoji.
+        Ďalšie novinky pribudnú už čoskoro!
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="discord">
+
+  <h2>Pridaj sa k nám 🍪</h2>
+
+  <p>
+    Novinky, oznámenia, komunita a podpora na našom Discorde.
+  </p>
+
+  <a class="button orange"
+     href="https://discord.gg/JAfQn2aJE"
+     target="_blank">
+     PRIPOJIŤ SA NA DISCORD
+  </a>
+
+</section>
+
+
+<footer>
+  © 2026 SušenkaSMP • Nie sme spojení so spoločnosťou Mojang Studios.
+</footer>
+
+
+<script>
+
+function copyIP() {
+
+  navigator.clipboard.writeText("susenkasmp.ultramc.co");
+
+  const ip = document.getElementById("ip");
+
+  ip.innerText = "✓ IP skopírovaná!";
+
+  setTimeout(() => {
+    ip.innerText = "susenkasmp.ultramc.co";
+  }, 2000);
+
+}
+
+</script>
+
+</body>
+</html>
