@@ -20,17 +20,16 @@
       color: white;
     }
 
-    /* MENU */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
       height: 75px;
-      background: rgba(8, 8, 8, 0.95);
+      background: rgba(8,8,8,.96);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 8%;
+      padding: 0 6%;
       z-index: 1000;
       border-bottom: 1px solid #222;
     }
@@ -44,21 +43,20 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 30px;
+      gap: 25px;
     }
 
     nav a {
       color: #ddd;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.2s;
+      transition: .2s;
     }
 
     nav a:hover {
       color: #ff7a00;
     }
 
-    /* HLAVNA STRANKA */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -68,17 +66,18 @@
       padding: 120px 20px 60px;
 
       background:
-        radial-gradient(circle at center, rgba(255,122,0,.18), transparent 45%),
-        linear-gradient(#080808, #111);
+        radial-gradient(circle at center, rgba(255,122,0,.20), transparent 45%),
+        linear-gradient(#080808,#111);
     }
 
     .hero h1 {
-      font-size: clamp(55px, 9vw, 110px);
+      font-size: clamp(55px,9vw,110px);
       font-weight: 900;
       letter-spacing: -4px;
     }
 
-    .hero h1 span {
+    .hero h1 span,
+    .section-title span {
       color: #ff7a00;
     }
 
@@ -102,7 +101,7 @@
       text-decoration: none;
       font-weight: 800;
       cursor: pointer;
-      transition: 0.2s;
+      transition: .2s;
       border: none;
       font-size: 15px;
     }
@@ -128,7 +127,6 @@
       transform: translateY(-3px);
     }
 
-    /* SEKCIE */
     section {
       padding: 100px 10%;
     }
@@ -138,25 +136,24 @@
       margin-bottom: 15px;
     }
 
-    .section-title span {
-      color: #ff7a00;
-    }
-
     .subtitle {
       color: #888;
       margin-bottom: 45px;
-      max-width: 700px;
+      max-width: 750px;
       line-height: 1.7;
     }
 
-    /* INFO */
-    .cards {
+    .cards,
+    .team,
+    .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
       gap: 20px;
     }
 
-    .card {
+    .card,
+    .member,
+    .product {
       background: #121212;
       border: 1px solid #242424;
       padding: 30px;
@@ -164,7 +161,9 @@
       transition: .25s;
     }
 
-    .card:hover {
+    .card:hover,
+    .member:hover,
+    .product:hover {
       transform: translateY(-5px);
       border-color: #ff7a00;
     }
@@ -179,7 +178,6 @@
       line-height: 1.6;
     }
 
-    /* PRAVIDLA */
     .rule {
       background: #121212;
       border-left: 4px solid #ff7a00;
@@ -188,33 +186,26 @@
       border-radius: 5px;
     }
 
-    /* TEAM */
-    .team {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
+    /* ADMIN TEAM */
 
     .member {
       text-align: center;
-      background: #121212;
-      padding: 30px;
-      border-radius: 12px;
-      border: 1px solid #242424;
     }
 
     .avatar {
-      width: 75px;
-      height: 75px;
-      background: #ff7a00;
+      width: 82px;
+      height: 82px;
       border-radius: 50%;
       margin: 0 auto 18px;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #ff7a00;
       color: #111;
       font-size: 30px;
       font-weight: bold;
+      object-fit: cover;
+      border: 3px solid #ff7a00;
     }
 
     .member h3 {
@@ -223,12 +214,66 @@
 
     .member p {
       color: #ff7a00;
+      font-weight: bold;
     }
 
-    /* DISCORD */
+    /* STORE */
+
+    #store {
+      background: #0c0c0c;
+    }
+
+    .store-category {
+      font-size: 26px;
+      margin: 50px 0 20px;
+    }
+
+    .product {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: 900;
+      color: #ff7a00;
+      margin: 18px 0;
+    }
+
+    .product p {
+      color: #999;
+      line-height: 1.6;
+    }
+
+    .best {
+      border-color: #ff7a00;
+    }
+
+    .badge {
+      position: absolute;
+      top: 15px;
+      right: -35px;
+      background: #ff7a00;
+      color: #111;
+      padding: 6px 40px;
+      transform: rotate(40deg);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .coming {
+      opacity: .65;
+    }
+
     .discord {
       text-align: center;
-      background: linear-gradient(135deg, #17100a, #0b0b0b);
+      background: linear-gradient(135deg,#17100a,#0b0b0b);
     }
 
     .discord h2 {
@@ -248,8 +293,7 @@
       border-top: 1px solid #222;
     }
 
-    /* MOBIL */
-    @media(max-width: 800px) {
+    @media(max-width:900px) {
       nav {
         padding: 0 20px;
       }
@@ -258,12 +302,12 @@
         display: none;
       }
 
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
       section {
         padding: 80px 25px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
       }
     }
   </style>
@@ -279,6 +323,7 @@
     <li><a href="#info">Info</a></li>
     <li><a href="#pravidla">Pravidlá</a></li>
     <li><a href="#team">Team</a></li>
+    <li><a href="#store">Store</a></li>
     <li><a href="#novinky">Novinky</a></li>
     <li><a href="https://discord.gg/JAfQn2aJE" target="_blank">Discord</a></li>
   </ul>
@@ -288,6 +333,7 @@
 <section class="hero" id="domov">
 
   <div>
+
     <h1>SUŠENKA<span>SMP</span></h1>
 
     <p>
@@ -308,9 +354,8 @@
 
     </div>
 
-    <p id="ip"
-       style="margin-top:20px;font-size:15px;">
-       susenkasmp.ultramc.co
+    <p id="ip" style="margin-top:20px;font-size:15px;">
+      susenkasmp.ultramc.co
     </p>
 
   </div>
@@ -326,8 +371,8 @@
 
   <p class="subtitle">
     SušenkaSMP je CZ/SK Minecraft survival server vytvorený
-    pre komunitu hráčov, ktorí chcú klasické SMP, zábavu,
-    obchodovanie a súboje s ostatnými hráčmi.
+    pre komunitu hráčov, ktorí chcú survival, ekonomiku,
+    obchodovanie, PvP a zábavu s ostatnými hráčmi.
   </p>
 
   <div class="cards">
@@ -335,24 +380,21 @@
     <div class="card">
       <h3>⚔️ Survival</h3>
       <p>
-        Klasický survival svet, v ktorom môžeš stavať,
-        bojovať a vytvoriť si vlastnú základňu.
+        Preži, stavaj, bojuj a vybuduj si vlastnú základňu.
       </p>
     </div>
 
     <div class="card">
       <h3>💰 Ekonomika</h3>
       <p>
-        Získavaj peniaze, obchoduj s hráčmi a vybuduj
-        si svoje bohatstvo.
+        Zarábaj, obchoduj s hráčmi a vybuduj si svoje bohatstvo.
       </p>
     </div>
 
     <div class="card">
       <h3>👥 Komunita</h3>
       <p>
-        Pridaj sa k našej CZ/SK komunite a hraj
-        spolu s ostatnými.
+        Pridaj sa k našej CZ/SK komunite a hraj spolu s ostatnými.
       </p>
     </div>
 
@@ -376,7 +418,7 @@
   </div>
 
   <div class="rule">
-    <b>02.</b> Nezneužívaj bugy a chyby servera.
+    <b>02.</b> Nezneužívaj bugy alebo chyby servera.
   </div>
 
   <div class="rule">
@@ -384,7 +426,7 @@
   </div>
 
   <div class="rule">
-    <b>04.</b> Nespamuj a správaj sa normálne k ostatným hráčom.
+    <b>04.</b> Nespamuj a správaj sa slušne k ostatným hráčom.
   </div>
 
 </section>
@@ -393,70 +435,193 @@
 <section id="team">
 
   <h2 class="section-title">
-    Náš <span>Team</span>
+    Admin <span>Team</span>
   </h2>
 
   <p class="subtitle">
     Ľudia, ktorí sa starajú o SušenkaSMP.
   </p>
 
-<div class="team">
+  <div class="team">
 
-  <div class="member">
-    <div class="avatar">C</div>
-    <h3>cookie448</h3>
-    <p>OWNER</p>
+    <div class="member">
+      <img class="avatar"
+           src="Cookie448_Pfp.png"
+           alt="cookie448">
+
+      <h3>cookie448</h3>
+      <p>OWNER</p>
+    </div>
+
+
+    <div class="member">
+      <div class="avatar">T</div>
+      <h3>TokioMaster</h3>
+      <p>CO-OWNER</p>
+    </div>
+
+
+    <div class="member">
+      <div class="avatar">B</div>
+      <h3>BlockeyHead</h3>
+      <p>HL. MANAGER</p>
+    </div>
+
+
+    <div class="member">
+      <div class="avatar">F</div>
+      <h3>Fipiko10</h3>
+      <p>MANAGER</p>
+    </div>
+
+
+    <div class="member">
+      <div class="avatar">K</div>
+      <h3>kingkong_3</h3>
+      <p>MANAGER</p>
+    </div>
+
+
+    <div class="member">
+      <div class="avatar">K</div>
+      <h3>Krlkla1234</h3>
+      <p>HL. DEVELOPER</p>
+    </div>
+
+
+    <div class="member">
+      <div class="avatar">D</div>
+      <h3>offline_danix13</h3>
+      <p>DEVELOPER</p>
+    </div>
+
+
+    <div class="member">
+      <div class="avatar">A</div>
+      <h3>AxolotlzSK</h3>
+      <p>DEVELOPER</p>
+    </div>
+
+
+    <div class="member">
+      <div class="avatar">T</div>
+      <h3>Tobik207</h3>
+      <p>DEVELOPER</p>
+    </div>
+
   </div>
 
-  <div class="member">
-    <div class="avatar">T</div>
-    <h3>TokioMaster</h3>
-    <p>CO-OWNER</p>
+</section>
+
+
+<section id="store">
+
+  <h2 class="section-title">
+    Sušenka<span>Store</span>
+  </h2>
+
+  <p class="subtitle">
+    Podpor SušenkaSMP a získaj výhody na serveri.
+  </p>
+
+
+  <h3 class="store-category">👑 VIP Ranky</h3>
+
+  <div class="products">
+
+    <div class="product">
+
+      <h3>VIP</h3>
+
+      <div class="price">
+        1,99 €
+      </div>
+
+      <p>
+        Základný VIP rank pre hráčov,
+        ktorí chcú podporiť server.
+      </p>
+
+    </div>
+
+
+    <div class="product best">
+
+      <div class="badge">
+        POPULÁRNE
+      </div>
+
+      <h3>🍪 Sušenka</h3>
+
+      <div class="price">
+        4,99 €
+      </div>
+
+      <p>
+        Viac výhod a bonusov
+        pre aktívnych hráčov.
+      </p>
+
+    </div>
+
+
+    <div class="product">
+
+      <h3>🍪 Sušenka+</h3>
+
+      <div class="price">
+        7,99 €
+      </div>
+
+      <p>
+        Najvyšší rank s najlepšími
+        výhodami na SušenkaSMP.
+      </p>
+
+    </div>
+
   </div>
 
-  <div class="member">
-    <div class="avatar">B</div>
-    <h3>BlockeyHead</h3>
-    <p>HL. MANAGER</p>
-  </div>
 
-  <div class="member">
-    <div class="avatar">F</div>
-    <h3>Fipiko10</h3>
-    <p>MANAGER</p>
-  </div>
+  <h3 class="store-category">🔑 Kľúče</h3>
 
-  <div class="member">
-    <div class="avatar">K</div>
-    <h3>kingkong_3</h3>
-    <p>MANAGER</p>
-  </div>
+  <div class="products">
 
-  <div class="member">
-    <div class="avatar">K</div>
-    <h3>Krlkla1234</h3>
-    <p>HL. DEVELOPER</p>
-  </div>
+    <div class="product coming">
+      <h3>Kľúč #1</h3>
+      <div class="price">— €</div>
+      <p>Pripravujeme</p>
+    </div>
 
-  <div class="member">
-    <div class="avatar">D</div>
-    <h3>offline_danix13</h3>
-    <p>DEVELOPER</p>
-  </div>
 
-  <div class="member">
-    <div class="avatar">A</div>
-    <h3>AxolotlzSK</h3>
-    <p>DEVELOPER</p>
-  </div>
+    <div class="product coming">
+      <h3>Kľúč #2</h3>
+      <div class="price">— €</div>
+      <p>Pripravujeme</p>
+    </div>
 
-  <div class="member">
-    <div class="avatar">T</div>
-    <h3>Tobik207</h3>
-    <p>DEVELOPER</p>
-  </div>
 
-</div>
+    <div class="product coming">
+      <h3>Kľúč #3</h3>
+      <div class="price">— €</div>
+      <p>Pripravujeme</p>
+    </div>
+
+
+    <div class="product coming">
+      <h3>Kľúč #4</h3>
+      <div class="price">— €</div>
+      <p>Pripravujeme</p>
+    </div>
+
+
+    <div class="product coming">
+      <h3>Kľúč #5</h3>
+      <div class="price">— €</div>
+      <p>Pripravujeme</p>
+    </div>
+
+  </div>
 
 </section>
 
@@ -471,6 +636,7 @@
 
     <div class="card">
       <h3>🚀 SušenkaSMP</h3>
+
       <p>
         Oficiálna webová stránka SušenkaSMP je vo vývoji.
         Ďalšie novinky pribudnú už čoskoro!
@@ -484,7 +650,9 @@
 
 <section class="discord">
 
-  <h2>Pridaj sa k nám 🍪</h2>
+  <h2>
+    Pridaj sa k nám 🍪
+  </h2>
 
   <p>
     Novinky, oznámenia, komunita a podpora na našom Discorde.
@@ -493,7 +661,9 @@
   <a class="button orange"
      href="https://discord.gg/JAfQn2aJE"
      target="_blank">
-     PRIPOJIŤ SA NA DISCORD
+
+    PRIPOJIŤ SA NA DISCORD
+
   </a>
 
 </section>
@@ -515,8 +685,10 @@ function copyIP() {
   ip.innerText = "✓ IP skopírovaná!";
 
   setTimeout(() => {
+
     ip.innerText = "susenkasmp.ultramc.co";
-  }, 2000);
+
+  },2000);
 
 }
 
