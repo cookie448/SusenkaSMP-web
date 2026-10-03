@@ -57,6 +57,8 @@ nav a:hover {
     color: #ff7a00;
 }
 
+/* HERO */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -127,6 +129,8 @@ nav a:hover {
     color: #ff7a00;
 }
 
+/* SECTIONS */
+
 section {
     padding: 100px 8%;
 }
@@ -145,6 +149,8 @@ section {
     color: #999;
     line-height: 1.7;
 }
+
+/* INFO */
 
 .cards {
     max-width: 1100px;
@@ -177,7 +183,7 @@ section {
     line-height: 1.6;
 }
 
-/* PRAVIDLÁ */
+/* PRAVIDLA */
 
 .rule {
     max-width: 900px;
@@ -194,9 +200,7 @@ section {
     margin-right: 10px;
 }
 
-/* =========================
-   ADMIN TEAM
-========================= */
+/* ADMIN TEAM */
 
 .team {
     max-width: 1150px;
@@ -211,10 +215,8 @@ section {
     padding: 15px 10px 25px;
 }
 
-/*
-   Skin nemá oranžové pozadie.
-   Je tam iba oranžový kruhový okraj.
-*/
+/* priehľadné pozadie + iba oranžový kruh */
+
 .avatar {
     width: 105px;
     height: 105px;
@@ -229,7 +231,6 @@ section {
     object-position: center;
 
     display: block;
-
     padding: 5px;
 }
 
@@ -245,9 +246,7 @@ section {
     font-weight: 900;
 }
 
-/* =========================
-   STORE
-========================= */
+/* STORE */
 
 .store-category {
     max-width: 1100px;
@@ -264,6 +263,14 @@ section {
     gap: 20px;
 }
 
+/* celá karta je link */
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .product {
     position: relative;
     background: #111;
@@ -272,12 +279,14 @@ section {
     padding: 30px 22px;
     text-align: center;
     transition: .25s;
+    height: 100%;
+    cursor: pointer;
 }
 
-.product:hover {
+.product-link:hover .product {
     border-color: #ff7a00;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255,122,0,.10);
+    transform: translateY(-7px);
+    box-shadow: 0 12px 35px rgba(255,122,0,.18);
 }
 
 .product.best {
@@ -322,7 +331,7 @@ section {
     border-radius: 20px;
 }
 
-/* KEY COLORS */
+/* FARBY KĽÚČOV */
 
 .key-common h3 {
     color: #63d66d;
@@ -344,7 +353,7 @@ section {
     color: #d575ff;
 }
 
-/* NOVINKY */
+/* DISCORD */
 
 .discord {
     text-align: center;
@@ -370,9 +379,10 @@ footer {
     border-top: 1px solid #222;
 }
 
-/* MOBILE */
+/* MOBIL */
 
 @media(max-width:900px) {
+
     nav {
         padding: 0 20px;
     }
@@ -395,6 +405,7 @@ footer {
 }
 
 @media(max-width:500px) {
+
     .team {
         grid-template-columns: 1fr 1fr;
         gap: 20px 10px;
@@ -418,31 +429,49 @@ footer {
 
 <body>
 
+<!-- MENU -->
+
 <nav>
-    <div class="logo">🍪 SušenkaSMP</div>
+
+    <div class="logo">
+        🍪 SušenkaSMP
+    </div>
 
     <ul>
+
         <li><a href="#domov">Domov</a></li>
+
         <li><a href="#info">Info</a></li>
+
         <li><a href="#pravidla">Pravidlá</a></li>
+
         <li><a href="#team">Team</a></li>
+
         <li><a href="#store">Store</a></li>
+
         <li><a href="#novinky">Novinky</a></li>
+
         <li>
-            <a href="https://discord.gg/JAfQn2aJE" target="_blank">
+            <a href="https://discord.gg/JAfQn2aJE"
+               target="_blank">
                 Discord
             </a>
         </li>
+
     </ul>
+
 </nav>
 
 
 <!-- DOMOV -->
 
 <section class="hero" id="domov">
+
     <div>
 
-        <h1>SUŠENKA<span>SMP</span></h1>
+        <h1>
+            SUŠENKA<span>SMP</span>
+        </h1>
 
         <p>
             Jedno z najlepších CZ/SK Minecraft SMP
@@ -450,23 +479,34 @@ footer {
 
         <div class="buttons">
 
-            <button class="button orange" onclick="copyIP()">
+            <button
+                class="button orange"
+                onclick="copyIP()">
+
                 🍪 SKOPÍROVAŤ IP
+
             </button>
 
-            <a class="button dark"
-               href="https://discord.gg/JAfQn2aJE"
-               target="_blank">
+            <a
+                class="button dark"
+                href="https://discord.gg/JAfQn2aJE"
+                target="_blank">
+
                 DISCORD
+
             </a>
 
         </div>
 
-        <p id="ip" style="margin-top:20px;font-size:15px;">
+        <p id="ip"
+           style="margin-top:20px;font-size:15px;">
+
             susenkasmp.ultramc.co
+
         </p>
 
     </div>
+
 </section>
 
 
@@ -479,32 +519,45 @@ footer {
     </h2>
 
     <p class="subtitle">
+
         SušenkaSMP je CZ/SK Minecraft survival server vytvorený
         pre komunitu hráčov, ktorí chcú survival, ekonomiku,
         obchodovanie, PvP a zábavu s ostatnými hráčmi.
+
     </p>
 
     <div class="cards">
 
         <div class="card">
+
             <h3>⚔️ Survival</h3>
+
             <p>
                 Preži, stavaj, bojuj a vybuduj si vlastnú základňu.
             </p>
+
         </div>
 
+
         <div class="card">
+
             <h3>💰 Ekonomika</h3>
+
             <p>
                 Zarábaj, obchoduj s hráčmi a vybuduj si svoje bohatstvo.
             </p>
+
         </div>
 
+
         <div class="card">
+
             <h3>👥 Komunita</h3>
+
             <p>
                 Pridaj sa k našej CZ/SK komunite a hraj spolu s ostatnými.
             </p>
+
         </div>
 
     </div>
@@ -512,7 +565,7 @@ footer {
 </section>
 
 
-<!-- PRAVIDLÁ -->
+<!-- PRAVIDLA -->
 
 <section id="pravidla">
 
@@ -524,24 +577,40 @@ footer {
         Pred hraním na serveri si prečítaj základné pravidlá.
     </p>
 
+
     <div class="rule">
+
         <b>01.</b>
+
         Nepoužívaj cheaty, hack klienty ani zakázané módy.
+
     </div>
 
+
     <div class="rule">
+
         <b>02.</b>
+
         Nezneužívaj bugy alebo chyby servera.
+
     </div>
 
+
     <div class="rule">
+
         <b>03.</b>
+
         Rešpektuj rozhodnutia Admin Teamu.
+
     </div>
 
+
     <div class="rule">
+
         <b>04.</b>
+
         Nespamuj a správaj sa slušne k ostatným hráčom.
+
     </div>
 
 </section>
@@ -552,97 +621,116 @@ footer {
 <section id="team">
 
     <h2 class="section-title">
+
         Admin <span>Team</span>
+
     </h2>
 
     <p class="subtitle">
+
         Ľudia, ktorí sa starajú o SušenkaSMP.
+
     </p>
+
 
     <div class="team">
 
-        <!-- OWNER -->
+
+        <!-- COOKIE448 -->
 
         <div class="member">
 
-            <img class="avatar"
-                 src="Cookie448_Pfp.png"
-                 alt="cookie448">
+            <img
+                class="avatar"
+                src="Cookie448_Pfp.png"
+                alt="cookie448">
 
             <h3>cookie448</h3>
+
             <p>OWNER</p>
 
         </div>
 
 
-        <!-- CO-OWNER -->
+        <!-- TOKIOMASTER -->
 
         <div class="member">
 
-            <img class="avatar"
-                 src="https://s.namemc.com/3d/skin/body.png?id=f86168bb0b89fc10&model=classic&theta=30&phi=21&time=90&width=600&height=800"
-                 alt="TokioMaster">
+            <img
+                class="avatar"
+                src="https://s.namemc.com/3d/skin/body.png?id=f86168bb0b89fc10&model=classic&theta=30&phi=21&time=90&width=600&height=800"
+                alt="TokioMaster">
 
             <h3>TokioMaster</h3>
+
             <p>CO-OWNER</p>
 
         </div>
 
 
-        <!-- HL. MANAGER -->
+        <!-- BLOCKEYHEAD -->
 
         <div class="member">
 
-            <img class="avatar"
-                 src="https://s.namemc.com/3d/skin/body.png?id=8ac024dc251e36b3&model=slim&theta=30&phi=21&time=562.08&width=600&height=800"
-                 alt="BlockeyHead">
+            <img
+                class="avatar"
+                src="https://s.namemc.com/3d/skin/body.png?id=8ac024dc251e36b3&model=slim&theta=30&phi=21&time=562.08&width=600&height=800"
+                alt="BlockeyHead">
 
             <h3>BlockeyHead</h3>
+
             <p>HL. MANAGER</p>
 
         </div>
 
 
-        <!-- MANAGER -->
+        <!-- KINGKONG -->
 
         <div class="member">
 
-            <img class="avatar"
-                 src="https://s.namemc.com/3d/skin/body.png?id=2350fc8e0f6c588f&model=classic&theta=30&phi=21&time=90&width=600&height=800"
-                 alt="kingkong_3">
+            <img
+                class="avatar"
+                src="https://s.namemc.com/3d/skin/body.png?id=2350fc8e0f6c588f&model=classic&theta=30&phi=21&time=90&width=600&height=800"
+                alt="kingkong_3">
 
             <h3>kingkong_3</h3>
+
             <p>MANAGER</p>
 
         </div>
 
 
-        <!-- MANAGER -->
+        <!-- ERIK -->
 
         <div class="member">
 
-            <img class="avatar"
-                 src="https://s.namemc.com/3d/skin/body.png?id=e9749789fb989c56&model=slim&theta=30&phi=21&time=90&width=600&height=800"
-                 alt="Erikhrajehry122">
+            <img
+                class="avatar"
+                src="https://s.namemc.com/3d/skin/body.png?id=e9749789fb989c56&model=slim&theta=30&phi=21&time=90&width=600&height=800"
+                alt="Erikhrajehry122">
 
             <h3>Erikhrajehry122</h3>
+
             <p>MANAGER</p>
 
         </div>
 
 
-        <!-- DEVELOPER - ITZSTORMX -->
+        <!-- ITZSTORMX -->
 
         <div class="member">
 
-            <img class="avatar"
-                 src="https://s.namemc.com/3d/skin/body.png?id=0d542c4f92e65a24&model=slim&theta=30&phi=21&time=90&width=600&height=800"
-                 alt="ItzStormX">
+            <img
+                class="avatar"
+                src="https://s.namemc.com/3d/skin/body.png?id=0d542c4f92e65a24&model=slim&theta=30&phi=21&time=90&width=600&height=800"
+                alt="ItzStormX">
 
             <h3>ItzStormX</h3>
+
             <p>DEVELOPER</p>
 
         </div>
+
 
     </div>
 
@@ -654,172 +742,273 @@ footer {
 <section id="store">
 
     <h2 class="section-title">
+
         Sušenka<span>Store</span>
+
     </h2>
 
     <p class="subtitle">
+
         Podpor SušenkaSMP a získaj výhody na serveri.
+        Kliknutím na produkt prejdeš do nášho obchodu.
+
     </p>
 
 
     <!-- VIP RANKY -->
 
     <h3 class="store-category">
+
         👑 VIP Ranky
+
     </h3>
+
 
     <div class="products">
 
-        <div class="product">
 
-            <h3>VIP</h3>
+        <!-- VIP -->
 
-            <div class="price">
-                1,99 €
+        <a
+            href="https://susenkasmp.craftingstore.net/"
+            target="_blank"
+            class="product-link">
+
+            <div class="product">
+
+                <h3>VIP</h3>
+
+                <div class="price">
+                    1,99 €
+                </div>
+
+                <p>
+                    Základný VIP rank pre hráčov,
+                    ktorí chcú podporiť server.
+                </p>
+
             </div>
 
-            <p>
-                Základný VIP rank pre hráčov,
-                ktorí chcú podporiť server.
-            </p>
-
-        </div>
+        </a>
 
 
-        <div class="product best">
+        <!-- SUSENKA -->
 
-            <div class="badge">
-                POPULÁRNE
+        <a
+            href="https://susenkasmp.craftingstore.net/"
+            target="_blank"
+            class="product-link">
+
+            <div class="product best">
+
+                <div class="badge">
+                    POPULÁRNE
+                </div>
+
+                <h3>🍪 Sušenka</h3>
+
+                <div class="price">
+                    3,99 €
+                </div>
+
+                <p>
+                    Viac výhod a bonusov
+                    pre aktívnych hráčov.
+                </p>
+
             </div>
 
-            <h3>🍪 Sušenka</h3>
+        </a>
 
-            <div class="price">
-                3,99 €
+
+        <!-- SUSENKA PLUS -->
+
+        <a
+            href="https://susenkasmp.craftingstore.net/"
+            target="_blank"
+            class="product-link">
+
+            <div class="product">
+
+                <h3>🍪 Sušenka+</h3>
+
+                <div class="price">
+                    6,99 €
+                </div>
+
+                <p>
+                    Najvyšší rank s najlepšími
+                    výhodami na SušenkaSMP.
+                </p>
+
             </div>
 
-            <p>
-                Viac výhod a bonusov
-                pre aktívnych hráčov.
-            </p>
-
-        </div>
-
-
-        <div class="product">
-
-            <h3>🍪 Sušenka+</h3>
-
-            <div class="price">
-                6,99 €
-            </div>
-
-            <p>
-                Najvyšší rank s najlepšími
-                výhodami na SušenkaSMP.
-            </p>
-
-        </div>
+        </a>
 
     </div>
 
 
-    <!-- KĽÚČE -->
+    <!-- KLÚČE -->
 
     <h3 class="store-category">
+
         🔑 Kľúče
+
     </h3>
+
 
     <div class="products">
 
+
         <!-- COMMON -->
 
-        <div class="product key-common">
+        <a
+            href="https://susenkasmp.craftingstore.net/"
+            target="_blank"
+            class="product-link">
 
-            <h3>Common Key</h3>
+            <div class="product key-common">
 
-            <div class="price">
-                0,04 €
-                <span class="price-czk">1 Kč</span>
+                <h3>Common Key</h3>
+
+                <div class="price">
+
+                    0,04 €
+
+                    <span class="price-czk">
+                        1 Kč
+                    </span>
+
+                </div>
+
+                <p>
+                    Common kľúč
+                </p>
+
             </div>
 
-            <p>
-                Common kľúč
-            </p>
-
-        </div>
+        </a>
 
 
         <!-- AQUA -->
 
-        <div class="product key-aqua">
+        <a
+            href="https://susenkasmp.craftingstore.net/"
+            target="_blank"
+            class="product-link">
 
-            <h3>Aqua Key</h3>
+            <div class="product key-aqua">
 
-            <div class="price">
-                0,20 €
-                <span class="price-czk">5 Kč</span>
+                <h3>Aqua Key</h3>
+
+                <div class="price">
+
+                    0,20 €
+
+                    <span class="price-czk">
+                        5 Kč
+                    </span>
+
+                </div>
+
+                <p>
+                    Aqua kľúč
+                </p>
+
             </div>
 
-            <p>
-                Aqua kľúč
-            </p>
-
-        </div>
+        </a>
 
 
         <!-- LAVA -->
 
-        <div class="product key-lava">
+        <a
+            href="https://susenkasmp.craftingstore.net/"
+            target="_blank"
+            class="product-link">
 
-            <h3>Lava Key</h3>
+            <div class="product key-lava">
 
-            <div class="price">
-                0,50 €
-                <span class="price-czk">12 Kč</span>
+                <h3>Lava Key</h3>
+
+                <div class="price">
+
+                    0,50 €
+
+                    <span class="price-czk">
+                        12 Kč
+                    </span>
+
+                </div>
+
+                <p>
+                    Lava kľúč
+                </p>
+
             </div>
 
-            <p>
-                Lava kľúč
-            </p>
-
-        </div>
+        </a>
 
 
         <!-- DRILL -->
 
-        <div class="product key-drill">
+        <a
+            href="https://susenkasmp.craftingstore.net/"
+            target="_blank"
+            class="product-link">
 
-            <h3>Drill Key</h3>
+            <div class="product key-drill">
 
-            <div class="price">
-                1,00 €
-                <span class="price-czk">25 Kč</span>
+                <h3>Drill Key</h3>
+
+                <div class="price">
+
+                    1,00 €
+
+                    <span class="price-czk">
+                        25 Kč
+                    </span>
+
+                </div>
+
+                <p>
+                    Drill kľúč
+                </p>
+
             </div>
 
-            <p>
-                Drill kľúč
-            </p>
-
-        </div>
+        </a>
 
 
         <!-- ALTAR -->
 
-        <div class="product key-altar">
+        <a
+            href="https://susenkasmp.craftingstore.net/"
+            target="_blank"
+            class="product-link">
 
-            <h3>Altar Key</h3>
+            <div class="product key-altar">
 
-            <div class="price">
-                6,00 €
-                <span class="price-czk">147 Kč</span>
+                <h3>Altar Key</h3>
+
+                <div class="price">
+
+                    6,00 €
+
+                    <span class="price-czk">
+                        147 Kč
+                    </span>
+
+                </div>
+
+                <p>
+                    Altar kľúč
+                </p>
+
             </div>
 
-            <p>
-                Altar kľúč
-            </p>
+        </a>
 
-        </div>
 
     </div>
 
@@ -831,8 +1020,11 @@ footer {
 <section id="novinky">
 
     <h2 class="section-title">
+
         Najnovšie <span>novinky</span>
+
     </h2>
+
 
     <div class="cards">
 
@@ -856,16 +1048,21 @@ footer {
 <section class="discord">
 
     <h2>
+
         Pridaj sa k nám 🍪
+
     </h2>
 
     <p>
+
         Novinky, oznámenia, komunita a podpora na našom Discorde.
+
     </p>
 
-    <a class="button orange"
-       href="https://discord.gg/JAfQn2aJE"
-       target="_blank">
+    <a
+        class="button orange"
+        href="https://discord.gg/JAfQn2aJE"
+        target="_blank">
 
         PRIPOJIŤ SA NA DISCORD
 
@@ -874,8 +1071,12 @@ footer {
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
+
     © 2026 SušenkaSMP • Nie sme spojení so spoločnosťou Mojang Studios.
+
 </footer>
 
 
@@ -890,7 +1091,9 @@ function copyIP() {
     ip.innerText = "✓ IP skopírovaná!";
 
     setTimeout(() => {
+
         ip.innerText = "susenkasmp.ultramc.co";
+
     },2000);
 
 }
