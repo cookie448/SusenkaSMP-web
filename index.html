@@ -322,6 +322,8 @@ section {
     border-radius: 20px;
 }
 
+/* FARBY KLUCOV */
+
 .key-common h3 {
     color: #63d66d;
 }
@@ -371,6 +373,7 @@ footer {
 /* MOBIL */
 
 @media(max-width:900px) {
+
     nav {
         padding: 0 20px;
     }
@@ -393,6 +396,7 @@ footer {
 }
 
 @media(max-width:500px) {
+
     .team {
         grid-template-columns: 1fr 1fr;
         gap: 20px 10px;
@@ -416,8 +420,13 @@ footer {
 
 <body>
 
+<!-- MENU -->
+
 <nav>
-    <div class="logo">🍪 SušenkaSMP</div>
+
+    <div class="logo">
+        🍪 SušenkaSMP
+    </div>
 
     <ul>
         <li><a href="#domov">Domov</a></li>
@@ -433,6 +442,7 @@ footer {
             </a>
         </li>
     </ul>
+
 </nav>
 
 
@@ -442,7 +452,9 @@ footer {
 
     <div>
 
-        <h1>SUŠENKA<span>SMP</span></h1>
+        <h1>
+            SUŠENKA<span>SMP</span>
+        </h1>
 
         <p>
             Jedno z najlepších CZ/SK Minecraft SMP
@@ -464,7 +476,7 @@ footer {
         </div>
 
         <p id="ip" style="margin-top:20px;font-size:15px;">
-            susenkasmp.ultramc.co
+            play.susenkasmp.eu
         </p>
 
     </div>
@@ -490,6 +502,7 @@ footer {
 
         <div class="card">
             <h3>⚔️ Survival</h3>
+
             <p>
                 Preži, stavaj, bojuj a vybuduj si vlastnú základňu.
             </p>
@@ -497,6 +510,7 @@ footer {
 
         <div class="card">
             <h3>💰 Ekonomika</h3>
+
             <p>
                 Zarábaj, obchoduj s hráčmi a vybuduj si svoje bohatstvo.
             </p>
@@ -504,6 +518,7 @@ footer {
 
         <div class="card">
             <h3>👥 Komunita</h3>
+
             <p>
                 Pridaj sa k našej CZ/SK komunite a hraj spolu s ostatnými.
             </p>
@@ -562,6 +577,7 @@ footer {
     </p>
 
     <div class="team">
+
 
         <!-- COOKIE448 -->
 
@@ -667,6 +683,7 @@ footer {
 
         </div>
 
+
     </div>
 
 </section>
@@ -693,6 +710,7 @@ footer {
     </h3>
 
     <div class="products">
+
 
         <!-- VIP -->
 
@@ -783,6 +801,7 @@ footer {
 
     <div class="products">
 
+
         <!-- COMMON -->
 
         <a
@@ -796,10 +815,14 @@ footer {
 
                 <div class="price">
                     0,04 €
-                    <span class="price-czk">1 Kč</span>
+                    <span class="price-czk">
+                        1 Kč
+                    </span>
                 </div>
 
-                <p>Common kľúč</p>
+                <p>
+                    Common kľúč
+                </p>
 
             </div>
 
@@ -819,10 +842,14 @@ footer {
 
                 <div class="price">
                     0,20 €
-                    <span class="price-czk">5 Kč</span>
+                    <span class="price-czk">
+                        5 Kč
+                    </span>
                 </div>
 
-                <p>Aqua kľúč</p>
+                <p>
+                    Aqua kľúč
+                </p>
 
             </div>
 
@@ -842,10 +869,14 @@ footer {
 
                 <div class="price">
                     0,50 €
-                    <span class="price-czk">12 Kč</span>
+                    <span class="price-czk">
+                        12 Kč
+                    </span>
                 </div>
 
-                <p>Lava kľúč</p>
+                <p>
+                    Lava kľúč
+                </p>
 
             </div>
 
@@ -865,10 +896,14 @@ footer {
 
                 <div class="price">
                     1,00 €
-                    <span class="price-czk">25 Kč</span>
+                    <span class="price-czk">
+                        25 Kč
+                    </span>
                 </div>
 
-                <p>Drill kľúč</p>
+                <p>
+                    Drill kľúč
+                </p>
 
             </div>
 
@@ -888,14 +923,19 @@ footer {
 
                 <div class="price">
                     6,00 €
-                    <span class="price-czk">147 Kč</span>
+                    <span class="price-czk">
+                        147 Kč
+                    </span>
                 </div>
 
-                <p>Altar kľúč</p>
+                <p>
+                    Altar kľúč
+                </p>
 
             </div>
 
         </a>
+
 
     </div>
 
@@ -951,6 +991,8 @@ footer {
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
     © 2026 SušenkaSMP • Nie sme spojení so spoločnosťou Mojang Studios.
 </footer>
@@ -960,14 +1002,16 @@ footer {
 
 function copyIP() {
 
-    navigator.clipboard.writeText("susenkasmp.ultramc.co");
+    navigator.clipboard.writeText("play.susenkasmp.eu");
 
     const ip = document.getElementById("ip");
 
     ip.innerText = "✓ IP skopírovaná!";
 
     setTimeout(() => {
-        ip.innerText = "susenkasmp.ultramc.co";
+
+        ip.innerText = "play.susenkasmp.eu";
+
     },2000);
 
 }
